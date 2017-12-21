@@ -1,0 +1,80 @@
+float x;
+float y;
+float c;
+void setup() {
+  x=0;
+  y=0;
+  c=mouseX/10;
+  size(500,500,P3D);
+}
+
+void draw() {
+  lights();
+  background(0);
+  noStroke();
+  fill(255);
+  c=mouseX/10+10;
+ 
+  pushMatrix();
+  x=c;
+  y=c;
+  translate(x,y,-200);
+  shininess(2.0);
+  sphere(10);
+  popMatrix();
+    pushMatrix();
+  x=+c;
+  y=+c;
+  translate(x,y,-200);
+  specular(2.0);
+  sphere(10);
+  popMatrix();
+    pushMatrix();
+  x=-c;
+  y=-c;
+  translate(x,y,-200);
+  ambient(10);
+  sphere(10);
+  popMatrix();
+    pushMatrix();
+  x=+c;
+  y=-c;
+  translate(x,y,-200);
+  sphere(10);
+  popMatrix();
+    pushMatrix();
+  x=-c;
+  y=+c;
+  translate(x,y,-200);
+  sphere(10);
+  popMatrix();
+  x+=c;
+  y+=c;
+  pushMatrix();
+  x+=c*2;
+  x+=c*2;
+  translate(x,y,-200);
+  sphere(10);
+  popMatrix();
+    pushMatrix();
+  x-=c*2;
+  x-=c*2;
+  translate(x,y,-200);
+  sphere(10);
+  popMatrix();
+    pushMatrix();
+  x-=c*2;
+  x+=c*2;
+  translate(x,y,-200);
+  sphere(10);
+  popMatrix();
+    pushMatrix();
+  x+=c*2;
+  x-=c*2;
+  translate(x,y,-200);
+  sphere(10);
+  popMatrix();
+  x=0;
+  y=0;
+}
+    

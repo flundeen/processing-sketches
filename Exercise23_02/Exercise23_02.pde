@@ -1,6 +1,14 @@
+/* 
+  Flynn Lundeen
+  Coding
+  Dr. Von Aggy
+  */
+
 float x1 = 50;
 float y1 = 50;
 void setup(){
+  scale(10);
+  size(900,700);
   translate(0,20);
   shap();
   translate(10,0);
