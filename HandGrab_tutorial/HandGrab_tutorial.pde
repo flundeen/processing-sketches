@@ -2,7 +2,9 @@
 /*-----------------------------------------
   handGrab is a leap motion variable that gives values between 0 - 1.
   When the hand is open the value of hangGrab is 0. When the hand
-  creates a fistit gives the value of 1. 
+  creates a fistit gives the value of 1. In this sketch when the hand
+  is closed the background is green, but if the hand isn't closed then 
+  background is red.
 */
 import de.voidplus.leapmotion.*;
 
