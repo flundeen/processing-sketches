@@ -1,3 +1,9 @@
+/* 
+Flynn Lundeen
+Exercise30_01
+This code shows the variety created by randomSeed(). All you have to do is click.
+*/
+
 float y;
 int x;
 float y2;

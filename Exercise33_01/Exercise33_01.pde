@@ -1,9 +1,15 @@
+/*
+Flynn, Lundeen
+Exercise33_01
+This code creates a pendulum that changes colors
+*/
+
 float x;
 float y;
 float ang = 10;
 float Aacc = 0;
 float Avel = 0;
-float gravity = 0.001;
+float gravity = 0.01;
 float hite = 320;
 int r = 150;
 int C;

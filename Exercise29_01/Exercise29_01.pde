@@ -1,3 +1,9 @@
+/* 
+Flynn Lundeen
+Exercise29_01
+This code rotates a line in accordance to voltage given by protentiometers
+*/
+
 import processing.serial.*;
 import cc.arduino.*;
 Arduino arduino;
