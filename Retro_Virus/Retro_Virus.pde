@@ -12,7 +12,7 @@ void draw() {
   ellipse(width/2,height/2, 200, 200);
   circ1(150);
   delay(1000);
-  //noLoop();
+  noLoop();
 }
 
 
