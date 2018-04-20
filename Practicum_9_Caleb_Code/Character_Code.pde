@@ -11,6 +11,7 @@ class You {
   float ang = 0;
   int P =1;
   float C = 0;
+  color invis;
   float dirX;
   float dirY;
   int count = 0;
@@ -19,7 +20,7 @@ class You {
   You () {
     YOU = new character(200,200,10);
     ang = atan2(YOU.x-250,YOU.y-250);
-    for (int i = 0; 500 > i; i++) {
+    for (int i = 0; 50 > i; i++) {
       float[] a = {0,0};
       trail.add(a);
     }
@@ -36,11 +37,21 @@ class You {
       //trail.get(i)[0] = trail.get(i-1)[0];
       //trail.get(i)[1] = trail.get(i-1)[1];
       //}
+      if ( dist(tarX,tarY,YOU.x,YOU.y) <= 50) {
       colorMode(HSB);
       fill(C,255,255);
       stroke(C,255,255);
       C = C + 5;
       C %= 255;
+      } else { 
+        invis= get(round(trail.get(i)[0]),round(trail.get(i)[1]));
+ 
+
+  
+      fill(invis);
+      stroke(invis);
+        
+      }
       ellipse(trail.get(i)[0],trail.get(i)[1],10,10);
       
     }
@@ -63,7 +74,7 @@ class You {
           line(YOU.x,YOU.y,dirX + YOU.x,dirY + YOU.y);
     if(P==1) {
     ang = atan2(tarX-YOU.x,tarY-YOU.y);
-    if(dist(tarX,tarY,YOU.x,YOU.y) < 5) {
+    if(dist(tarX,tarY,YOU.x,YOU.y) < 20) {
       P++;
     }
      }
@@ -76,7 +87,7 @@ class You {
      if (frameCount % 125 == 0) {
        ang = atan2(YOU.x-tarX,YOU.y-tarY) + radians(180);
      }
-       if(dist(YOU.x,YOU.y,288,288) >= 75) {
+       if(dist(YOU.x,YOU.y,288,288) >= 100) {
          P++;
          angdif = ang + 180;
        }
@@ -84,23 +95,12 @@ class You {
      if(P==3) {
        tarX = 288;
        tarY = 288;
-        ang = atan2(YOU.x-tarX,YOU.y-tarY) + 180;
+        ang = atan2(YOU.x-tarX,YOU.y-tarY) + radians(180);
        if(dist(tarX,tarY,YOU.x,YOU.y) < 5) {
       P = 2;
     }
     
-    if (YOU.hit(MAP,YOU.x + sin(ang),YOU.y + cos(ang))) {
-      //if hitting against wall
-      for ( int m = 0; 360 > m; m += 90) {
-        float dir = radians(m);
-        float mx = YOU.x + sin(dir);
-        float my = YOU.y + cos(dir);
-        if(YOU.hit(MAP,mx,my)) {
-          ang = dir + radians(90);
-        }
-      }
     
-    }
     
     if ( count >= 5) {
        ang += 180;
@@ -113,6 +113,18 @@ class You {
     
      }
        
+     if (YOU.hit(MAP,YOU.x + sin(ang),YOU.y + cos(ang))) {
+      //if hitting against wall
+      for ( int m = 0; 360 > m; m += 1) {
+        float dir = radians(m);
+        float mx = YOU.x + sin(dir);
+        float my = YOU.y + cos(dir);
+        if(YOU.hit(MAP,mx,my)) {
+          ang = dir + radians(1);
+        }
+      }
+    
+    }
      
      
     }

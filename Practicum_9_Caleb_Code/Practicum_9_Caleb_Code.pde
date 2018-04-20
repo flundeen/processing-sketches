@@ -1,6 +1,5 @@
-
 class map {//class to draw the background, **not essential to know for the game** (except for the food functions)
- float[][] walls = new float[int(45) ][4]; //creates random up to 90 walls
+ float[][] walls = new float[int(random(90)) ][4]; //creates random up to 90 walls
  ArrayList<bacteria> food = new ArrayList(); //start list of bacteria, called food
  PImage images;//really just one image, needs to be loaded in setup
  void init() {
@@ -235,14 +234,6 @@ class character {
      x += sin(ang) * speed_;
      y += cos(ang) * speed_;
      energy -= sqrt(speed_)/2;
-     }
-  }
-  void move(map Map ,float x_, float y_,boolean askldfjioejasdijf) {
-    
-     if (! hit(Map,x + x_, y + y_ )) {
-     x += x_;
-     y += y_;
-    // energy -= sqrt(speed_)/2;
      }
   }
   
