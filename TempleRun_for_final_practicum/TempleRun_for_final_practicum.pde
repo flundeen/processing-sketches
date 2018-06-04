@@ -9,8 +9,10 @@ TempleRun TR;
 
 void setup() {
   fullScreen(P3D);
+  //size(500,850,P3D);
   TR = new TempleRun(5000, this);
   TR.Set();
+  print(height);
 }
 
 
@@ -26,30 +28,29 @@ void draw() {
 
 
 void keyPressed() {
-  if (keyCode == RIGHT) {
-      RunnerLane += 1;
-
-    }
-    
-if (keyCode == LEFT) {
-      RunnerLane -= 1;
-
-    }
-    
-if (keyCode == UP) {
-    
-    if(Rlive == false) {
-      if (dchek == true) {
-      resett = true;
-      dchek = false;
+    if (keyCode == RIGHT) {
+        RunnerLane += 1;
+  
       }
-    } else {
-      if (jcount < 3) {
-        jcount ++;
-      rjum = true;
-      } 
-    }
-}
-
+      
+  if (keyCode == LEFT) {
+        RunnerLane -= 1;
+  
+      }
+      
+  if (keyCode == UP) {
+      
+      if(Rlive == false) {
+        if (dchek == true) {
+        resett = true;
+        dchek = false;
+        }
+      } else {
+        if (jcount < 1) {
+          jcount ++;
+        rjum = true;
+        } 
+      }
+  }
   
 }

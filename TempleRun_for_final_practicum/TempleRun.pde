@@ -47,7 +47,7 @@ ControlP5 cp5;
      laneCount = 4;
     RunnerLane = 2;
     depth = d * -1;
-    runnerWidth = 100;
+    runnerWidth = width/18 * 2;
     flr = new flor[abs(depth)/500];
     wl = new wall[ 10];
     for (int i = 0; i < abs(depth )/ 500; i++) {
@@ -187,7 +187,7 @@ ControlP5 cp5;
       if (yPos >= 00) {
        yvel = 0;
       }
-      yvel = -20; //hard coded
+      yvel = (width/40) * -1; //hard coded
       
       
       
@@ -196,7 +196,7 @@ ControlP5 cp5;
     else {
       
     yPos += yvel;
-    yvel += .7; //hard coded
+    yvel += height * 0.002; //hard coded
    
     
     if (yPos > 00) {
@@ -291,20 +291,20 @@ class wall  {
       || (wallPos.get(i)[1] == 2 && rlane+1 == wallPos.get(i)[0] && wallPos.get(i)[3] > - 150)) {
         
         if( wallPos.get(i)[2] == 2) {
-          if (height/4 * 3 - (100/2)+ ypos >= 641.90106 - 525) {
+          if (height/4 * 3 - (100/2)+ ypos >= height/1.38910098403 - (width/6 * wallPos.get(i)[2] - 125)) {
           Rlive = false;
           }
         } else {
         
-          if (height/4 * 3 - (100/2)+ ypos >= 641.90106 - 125) {
+          if (height/4 * 3 - (100/2)+ ypos >= height/1.38910098403 - 125) {
             Rlive = false;
           }
         }
-        println(height/4 * 3 - (100/2)+ ypos," ", (height/4 * 3 + 251 - 125) - width/6 * (wallPos.get(i)[2] - 125)/2);
+       // println(height/4 * 3 - (100/2)+ ypos," ", (height/4 * 3 + 251 - 125) - width/6 * (wallPos.get(i)[2] - 125)/2);
         
     
       }
-      if (height/4 * 3 - (100/2)+ ypos >= 641.90106 - 50) {
+      if (height/4 * 3 - (100/2)+ ypos >= height/1.38910098403 - 50) {
         jcount = 0;
       }
       if (wallPos.get(i)[1] == 2 && rlane+1 == wallPos.get(i)[0] || rlane == wallPos.get(i)[0]) {
@@ -316,23 +316,23 @@ class wall  {
       
       
       if ( wallPos.get(i)[1] == 1) {
-         translate(width/6 * 1.5 + (wallPos.get(i)[0] * width/6) , width/6 * 3 - 100 -1, wallPos.get(i)[3]);
-         if (wallPos.get(i)[2] == 2) {
-        translate(0, -60, 0);
-         box(width/6, (width/6 * wallPos.get(i)[2] - 125) * 2, 100);
-      } else {
-        box(width/6, width/6 * wallPos.get(i)[2] - 125, 100);
-      }
-      
-      }else if (wallPos.get(i)[1] == 2) {
-         translate(width/6 * 1.5 + (wallPos.get(i)[0] * width/6) - width/12 , width/6 * 3 - 100 - 1, wallPos.get(i)[3]);
-         if (wallPos.get(i)[2] == 2) {
-        translate(0, - 60, 0);
-         box(width/6 * 2, (width/6 * wallPos.get(i)[2] - 125) * 2, 100);
-         
-      }else {
-         box(width/6 * 2, width/6 * wallPos.get(i)[2] - 125, 100);
-      }
+           translate(width/6 * 1.5 + (wallPos.get(i)[0] * width/6) , height/4 * 3 - width/12 , wallPos.get(i)[3]);
+           if (wallPos.get(i)[2] == 2) {
+          translate(0, 0, 0);
+           box(width/6, (width/6 * wallPos.get(i)[2] - 125) * 2, 100);
+        } else {
+          box(width/6, width/6 * wallPos.get(i)[2] , 100);
+        }
+        
+        }else if (wallPos.get(i)[1] == 2) {
+           translate(width/6 * 1.5 + (wallPos.get(i)[0] * width/6) - width/12 , height/4 * 3 - width/12 , wallPos.get(i)[3]);
+           if (wallPos.get(i)[2] == 2) {
+          translate(0, - 60, 0);
+           box(width/6 * 2, (width/6 * wallPos.get(i)[2] - 125) * 2, 100);
+           
+        }else {
+           box(width/6 * 2, width/6 * wallPos.get(i)[2] , 100);
+        }
       
       }
     
