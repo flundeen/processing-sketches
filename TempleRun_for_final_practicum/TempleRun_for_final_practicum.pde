@@ -8,8 +8,8 @@ int jcount = 0;
 TempleRun TR;
 
 void setup() {
-  fullScreen(P3D);
-  //size(500,850,P3D);
+ // fullScreen(P3D);
+  size(850,850,P3D);
   TR = new TempleRun(5000, this);
   TR.Set();
   print(height);

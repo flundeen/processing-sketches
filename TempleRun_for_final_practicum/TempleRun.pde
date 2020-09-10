@@ -83,7 +83,7 @@ ControlP5 cp5;
     }
     
     if (Rlive == true) {
-     if (count == 5000) {
+     if (count == 7500) {
        count = 0;
      }
      if (count == 0 ) {
@@ -187,7 +187,7 @@ ControlP5 cp5;
       if (yPos >= 00) {
        yvel = 0;
       }
-      yvel = (width/40) * -1; //hard coded
+      yvel = (height/35) * -1; //hard coded
       
       
       
